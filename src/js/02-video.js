@@ -9,3 +9,8 @@ function onTimeSave(timeupdate) {
   console.log(timeupdate.seconds);
   localStorage.setItem('videoplayer-current-time', timeupdate.seconds);
 }
+
+const getStorageValue = localStorage.getItem('videoplayer-current-time');
+if (getStorageValue) {
+  player.setCurrentTime(getStorageValue);
+}
